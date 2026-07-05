@@ -1,7 +1,0 @@
-<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="256" cy="256" r="216" fill="none" stroke="#7D2231" stroke-width="30"/>
-  <g transform="rotate(45 256 256)">
-    <path d="M256 70 L300 256 L212 256 Z" fill="#7D2231"/>
-    <path d="M222 266 L290 266 L256 414 Z" fill="none" stroke="#7D2231" stroke-width="16" stroke-linejoin="miter" stroke-miterlimit="8"/>
-  </g>
-</svg>

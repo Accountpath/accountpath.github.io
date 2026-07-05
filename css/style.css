@@ -9,7 +9,6 @@
   --navy-light: #16375f;
   --blue: #2e63a4;
   --accent: #c9a24b;
-  --garnet: #7d2231;
   --bg: #ffffff;
   --bg-soft: #f5f7fa;
   --text: #2b3440;
@@ -80,17 +79,7 @@ ul { list-style: none; }
   justify-content: space-between;
 }
 
-.brand { display: flex; align-items: center; gap: 11px; }
-
-.brand-text { display: flex; flex-direction: column; line-height: 1.3; }
-
-.brand-mark {
-  width: 38px;
-  height: 38px;
-  flex-shrink: 0;
-  color: #fff;
-  transition: color 0.35s;
-}
+.brand { display: flex; flex-direction: column; line-height: 1.3; }
 
 .brand-logo {
   font-family: var(--font-en);
@@ -153,7 +142,6 @@ ul { list-style: none; }
   height: 68px;
 }
 .site-header.scrolled .brand-logo { color: var(--navy); }
-.site-header.scrolled .brand-mark { color: var(--garnet); }
 .site-header.scrolled .brand-sub { color: var(--text-muted); }
 .site-header.scrolled .global-nav a { color: var(--navy); }
 .site-header.scrolled .nav-cta { color: var(--navy-dark) !important; }
@@ -923,7 +911,6 @@ ul { list-style: none; }
   margin-bottom: 56px;
 }
 
-.footer-brand .brand-mark { width: 42px; height: 42px; }
 .footer-brand .brand-logo { color: #fff; font-size: 1.4rem; }
 .footer-brand .brand-sub { color: rgba(255, 255, 255, 0.55); display: block; margin-top: 2px; }
 .footer-brand p { margin-top: 18px; font-size: 0.82rem; line-height: 1.9; }
