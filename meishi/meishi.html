@@ -5,7 +5,7 @@
 <title>名刺 | 株式会社AccountPath</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   /* ================================================================
      名刺入稿データ（グレー基調・ミニマル）
@@ -113,12 +113,13 @@
   }
   .front .company-block .sub { color: var(--muted); }
 
-  .front .qr {
+  .front .ap-mark {
     position: absolute;
     right: 10mm;
     bottom: 9mm;
+    width: 13mm;
   }
-  .front .qr svg { width: 11mm; height: 11mm; }
+  .front .ap-mark svg { width: 100%; height: auto; display: block; }
 
   .front .logo-badge {
     position: absolute;
@@ -196,7 +197,13 @@
       <div class="sub">https://www.accountpath.co.jp</div>
     </div>
 
-    <div class="qr"></div>
+    <div class="ap-mark">
+      <svg viewBox="0 0 62 44" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="25" width="62" height="11" fill="#aaaaaa"/>
+        <text x="3" y="36" font-family="Montserrat, sans-serif" font-weight="800" font-size="40" fill="#1b1d20">A</text>
+        <text x="27" y="36" font-family="Montserrat, sans-serif" font-weight="800" font-size="40" fill="#1b1d20" stroke="#c0c0c0" stroke-width="2.4" paint-order="stroke">P</text>
+      </svg>
+    </div>
   </div>
 
   <p class="preview-label">裏面</p>
