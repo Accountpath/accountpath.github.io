@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>名刺 | 株式会社AccountPath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* ================================================================
+     名刺入稿データ（グレー基調・ミニマル）
+     仕上がりサイズ : 91mm × 55mm
+     塗り足し       : 各辺 3mm（データサイズ 97mm × 61mm）
+     文字は仕上がり線から 3mm 以上内側に配置（安全マージン 6mm）
+     ================================================================ */
+  :root {
+    --card-bg: #c0c0c0;   /* シルバーグレー */
+    --ink: #1b1d20;       /* ほぼ黒 */
+    --muted: #4c4f53;     /* グレー文字 */
+    --line: #9a9a98;
+    --font-sans: "Noto Sans JP", sans-serif;
+    --font-en: "Montserrat", sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page { size: 97mm 61mm; margin: 0; }
+
+  body { background: #3a3d40; font-family: var(--font-sans); }
+
+  .card {
+    width: 97mm;
+    height: 61mm;
+    background: var(--card-bg);
+    color: var(--ink);
+    position: relative;
+    overflow: hidden;
+    /* 塗り足し3mm込み。仕上がり = 内側 91×55mm */
+  }
+
+  /* 画面プレビュー用（印刷時は解除） */
+  @media screen {
+    body { padding: 10mm; }
+    .card { margin: 0 auto 8mm; box-shadow: 0 4px 20px rgba(0,0,0,.45); }
+    .preview-label {
+      width: 97mm; margin: 0 auto 2mm;
+      font-size: 3mm; color: #fff; letter-spacing: .1em;
+    }
+  }
+  @media print {
+    body { background: none; padding: 0; }
+    .preview-label { display: none; }
+    .card { page-break-after: always; }
+    .card:last-child { page-break-after: auto; }
+  }
+
+  /* ============ 共通：QRコード ============ */
+  .qr svg {
+    display: block;
+    shape-rendering: crispEdges;
+  }
+  .qr svg rect { fill: var(--card-bg); }   /* QRの白地をカード色に */
+
+  /* ============ 表面 ============ */
+  .front .name-block {
+    position: absolute;
+    top: 9.5mm;
+    left: 10mm;
+  }
+  .front .name-en {
+    font-family: var(--font-en);
+    font-weight: 600;
+    font-size: 4.6mm;
+    letter-spacing: .08em;
+    color: var(--ink);
+  }
+  .front .name-jp {
+    font-size: 4.4mm;
+    font-weight: 500;
+    letter-spacing: .24em;
+    color: var(--ink);
+    margin-top: 1.6mm;
+  }
+  .front .name-title {
+    font-size: 2.1mm;
+    letter-spacing: .16em;
+    color: var(--muted);
+    margin-top: 0.6mm;
+  }
+  .front .email {
+    font-family: var(--font-en);
+    font-weight: 400;
+    font-size: 2.1mm;
+    letter-spacing: .05em;
+    color: var(--muted);
+    margin-top: 2.2mm;
+  }
+
+  .front .company-block {
+    position: absolute;
+    left: 10mm;
+    bottom: 9mm;
+    font-size: 2.2mm;
+    line-height: 1.7;
+    letter-spacing: .05em;
+    color: var(--ink);
+  }
+  .front .company-name {
+    font-weight: 700;
+    font-size: 2.5mm;
+    letter-spacing: .08em;
+    margin-bottom: 0.7mm;
+  }
+  .front .company-block .sub { color: var(--muted); }
+
+  .front .qr {
+    position: absolute;
+    right: 10mm;
+    bottom: 9mm;
+  }
+  .front .qr svg { width: 11mm; height: 11mm; }
+
+  .front .logo-badge {
+    position: absolute;
+    right: 10mm;
+    top: 9mm;
+    width: 10mm;
+    height: 10mm;
+  }
+  .front .logo-badge svg { width: 100%; height: 100%; display: block; }
+
+  /* ============ 裏面 ============ */
+  .back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .back .inner { text-align: center; }
+  .back .qr svg {
+    width: 15mm;
+    height: 15mm;
+    display: block;
+    margin: 0 auto;
+    shape-rendering: crispEdges;
+  }
+  .back .qr-url {
+    font-family: var(--font-en);
+    font-weight: 400;
+    font-size: 1.9mm;
+    letter-spacing: .1em;
+    color: var(--muted);
+    margin-top: 2.4mm;
+  }
+  .back .wordmark {
+    font-family: var(--font-en);
+    font-weight: 600;
+    font-size: 3.1mm;
+    letter-spacing: .2em;
+    color: var(--ink);
+    margin-top: 4mm;
+  }
+  .back .wordmark-sub {
+    font-family: var(--font-en);
+    font-weight: 500;
+    font-size: 1.7mm;
+    letter-spacing: .42em;
+    color: var(--muted);
+    margin-top: 1.6mm;
+  }
+</style>
+</head>
+<body>
+
+  <p class="preview-label">表面（仕上がり 91×55mm / 塗り足し込み 97×61mm）</p>
+  <div class="card front">
+    <div class="name-block">
+      <div class="name-en">Akira Nakae</div>
+      <div class="name-jp">中江 明</div>
+      <div class="name-title">代表取締役</div>
+      <div class="email">taki@jcpa-accounting.com</div>
+    </div>
+
+    <div class="logo-badge">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="#1b1d20"/>
+        <circle cx="50" cy="50" r="37" fill="none" stroke="#c0c0c0" stroke-width="5"/>
+        <polygon points="73,27 42.5,46.1 33,67" fill="#8b8b8b"/>
+        <polygon points="73,27 33,67 53.9,57.5" fill="#c0c0c0"/>
+      </svg>
+    </div>
+
+    <div class="company-block">
+      <div class="company-name">株式会社AccountPath</div>
+      <div class="sub">〒000-0000 東京都○○区○○ 1-2-3 ○○ビル 5F</div>
+      <div class="sub">phone. 00-0000-0000</div>
+      <div class="sub">https://www.accountpath.co.jp</div>
+    </div>
+
+    <div class="qr"></div>
+  </div>
+
+  <p class="preview-label">裏面</p>
+  <div class="card back">
+    <div class="inner">
+      <div class="qr"></div>
+      <div class="qr-url">https://www.accountpath.co.jp</div>
+      <div class="wordmark">AccountPath</div>
+      <div class="wordmark-sub">ACCOUNTING ADVISORY</div>
+    </div>
+  </div>
+
+  <script src="qrcode.min.js"></script>
+  <script>
+    /* QRコードのリンク先URL（要確認：正式なドメインに差し替えてください） */
+    var QR_URL = 'https://www.accountpath.co.jp';
+    var qr = qrcode(0, 'M');
+    qr.addData(QR_URL);
+    qr.make();
+    var svgTag = qr.createSvgTag({ cellSize: 4, margin: 0, scalable: true })
+                   .replace(/fill="white"/g, 'fill="#c0c0c0"');
+    document.querySelectorAll('.qr').forEach(function (el) {
+      el.innerHTML = svgTag;
+    });
+
+    /* URLに ?nologo を付けると右上のロゴなし版になる */
+    if (location.search.indexOf('nologo') !== -1) {
+      document.querySelectorAll('.logo-badge').forEach(function (el) {
+        el.remove();
+      });
+    }
+  </script>
+</body>
+</html>
