@@ -131,6 +131,10 @@
   }
   .front .logo-badge svg { width: 100%; height: 100%; display: block; }
 
+  /* ロゴ右上バージョン（?logotop）: APマークを右上へ、コンパスは非表示 */
+  body.logotop .front .ap-mark { top: 9mm; bottom: auto; }
+  body.logotop .front .logo-badge { display: none; }
+
   /* ============ 裏面 ============ */
   .back {
     display: flex;
@@ -241,6 +245,11 @@
       document.querySelectorAll('.logo-badge').forEach(function (el) {
         el.remove();
       });
+    }
+
+    /* URLに ?logotop を付けるとAPロゴが右上のバージョンになる */
+    if (location.search.indexOf('logotop') !== -1) {
+      document.body.classList.add('logotop');
     }
   </script>
 </body>
