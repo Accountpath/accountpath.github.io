@@ -1,0 +1,6 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="8" width="496" height="496" rx="112" fill="#1A1A1A"/>
+  <text x="200" y="390" font-family="Arial, 'Segoe UI', 'Helvetica Neue', sans-serif" font-size="356" font-weight="900" text-anchor="middle" fill="#FFFFFF">A</text>
+  <text x="332" y="390" font-family="Arial, 'Segoe UI', 'Helvetica Neue', sans-serif" font-size="356" font-weight="900" text-anchor="middle" fill="#C0C0C0">P</text>
+  <rect x="100" y="414" width="300" height="26" rx="13" fill="#C0C0C0"/>
+</svg>
