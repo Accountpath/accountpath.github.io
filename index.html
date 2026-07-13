@@ -15,8 +15,7 @@
   <header class="site-header">
     <div class="container-wide header-inner">
       <a href="index.html" class="brand">
-        <img src="images/logo-icon-white.svg" alt="" class="brand-mark brand-mark-light">
-        <img src="images/logo-icon.svg" alt="" class="brand-mark brand-mark-dark">
+        <img src="images/ap-appicon-mono-white.svg" alt="" class="brand-mark">
         <span class="brand-text">
           <span class="brand-logo">Account<span class="brand-accent">Path</span></span>
           <span class="brand-sub">ACCOUNTING ADVISORY</span>
@@ -28,9 +27,14 @@
       <nav class="global-nav">
         <ul>
           <li><a href="index.html" aria-current="page">トップ</a></li>
-          <li><a href="services.html">サービス紹介</a></li>
-          <li><a href="company.html">会社概要</a></li>
-          <li><a href="members.html">メンバー</a></li>
+          <li class="has-dropdown">
+            <a href="company.html">About us</a>
+            <ul class="dropdown-menu">
+              <li><a href="company.html">会社概要</a></li>
+              <li><a href="members.html">メンバー</a></li>
+            </ul>
+          </li>
+          <li><a href="services.html">サービス</a></li>
           <li><a href="contact.html" class="nav-cta">お問い合わせ</a></li>
         </ul>
       </nav>
@@ -77,28 +81,42 @@
       </div>
     </section>
 
-    <!-- About -->
+    <!-- Why AccountPath -->
     <section class="section">
       <div class="container">
         <div class="about-grid">
           <div class="about-copy">
             <div class="sec-head reveal">
-              <span class="sec-en">About Us</span>
-              <span class="sec-jp">私たちについて</span>
+              <span class="sec-en">Why AccountPath</span>
+              <span class="sec-jp">私たちが提供する価値</span>
             </div>
             <p class="statement reveal">
-              会計は未来を導くGPS
+              経営者が迷う瞬間に、数字を読める専門家が隣にいる状態をつくる。
             </p>
             <p class="reveal">
-              私たちAccountPathは、社名のとおり「会計(Account)を通じて、企業の進む道(Path)を描く」ことを使命とする会計アドバイザリーファームです。
-            </p>
-            <p class="reveal">
-              会計基準や制度の説明にとどまらず、その数字が経営にとって何を意味するのか、次にどんな一手を打つべきかまで踏み込み、お客様とともに考え抜きます。
+              成長中の会社では、決算、資金繰り、投資判断、M&A、管理体制づくりが同時に動きます。AccountPathは会計士それぞれの専門領域を持ち寄り、課題の整理から実行の設計まで一体で支援します。
             </p>
             <a href="company.html" class="btn btn-navy reveal">会社概要を見る</a>
           </div>
           <div class="about-photo reveal reveal-delay-1">
             <img src="https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&w=1200&q=80" alt="ミーティングの様子" loading="lazy">
+          </div>
+        </div>
+        <div class="principle-grid">
+          <div class="principle-card reveal">
+            <span class="num">01</span>
+            <h3>会計士が直接見る</h3>
+            <p>論点整理、数値分析、経営者への説明まで、資格者が責任を持って関与します。</p>
+          </div>
+          <div class="principle-card reveal reveal-delay-1">
+            <span class="num">02</span>
+            <h3>専門領域を分担する</h3>
+            <p>決算、M&A、CFO支援を3名で分担し、相談内容に応じた最短距離の支援を組みます。</p>
+          </div>
+          <div class="principle-card reveal reveal-delay-2">
+            <span class="num">03</span>
+            <h3>判断材料まで落とす</h3>
+            <p>制度説明で止めず、選択肢、影響額、次の行動まで見える形に整理します。</p>
           </div>
         </div>
       </div>
@@ -183,9 +201,9 @@
           <h4>Menu</h4>
           <ul>
             <li><a href="index.html">トップ</a></li>
-            <li><a href="services.html">サービス紹介</a></li>
             <li><a href="company.html">会社概要</a></li>
             <li><a href="members.html">メンバー</a></li>
+            <li><a href="services.html">サービス</a></li>
             <li><a href="contact.html">お問い合わせ</a></li>
           </ul>
         </div>

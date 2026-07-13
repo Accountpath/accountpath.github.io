@@ -85,11 +85,8 @@ ul { list-style: none; }
 .brand { display: flex; align-items: center; gap: 12px; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.3; }
 
-/* 会社ロゴ(白ヘッダー用カラー版 / 暗背景用ホワイト版を切り替え) */
+/* 会社ロゴ(白背景版APアイコン: 自前の白地を持つためどの背景でも共通) */
 .brand-mark { width: 42px; height: 42px; display: block; }
-.brand-mark-dark { display: none; }
-.site-header.scrolled .brand-mark-light { display: none; }
-.site-header.scrolled .brand-mark-dark { display: block; }
 
 .brand-logo {
   font-family: var(--font-en);
@@ -109,6 +106,41 @@ ul { list-style: none; }
 }
 
 .global-nav ul { display: flex; align-items: center; gap: 34px; }
+.global-nav li { position: relative; }
+
+/* ドロップダウン(About us 配下) */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  background: #fff;
+  min-width: 190px;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(27, 29, 32, 0.18);
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+}
+.has-dropdown:hover .dropdown-menu,
+.has-dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+.global-nav .dropdown-menu li { width: 100%; }
+.global-nav .dropdown-menu a {
+  display: block;
+  padding: 11px 24px;
+  color: var(--navy);
+  font-size: 0.88rem;
+  white-space: nowrap;
+  border-bottom: none;
+  transition: background 0.2s;
+}
+.global-nav .dropdown-menu a::after { display: none; }
+.global-nav .dropdown-menu a:hover { background: var(--bg-soft); }
 
 .global-nav a {
   font-size: 0.92rem;
@@ -469,6 +501,38 @@ ul { list-style: none; }
   border: 2px solid var(--accent);
   border-radius: 4px;
   z-index: -1;
+}
+
+/* Why AccountPath: 3つの価値カード */
+.principle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 64px;
+}
+.principle-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 34px 30px;
+  box-shadow: var(--shadow);
+}
+.principle-card .num {
+  font-family: var(--font-en);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-text);
+  display: block;
+  margin-bottom: 12px;
+}
+.principle-card h3 {
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.principle-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
 /* =========================================================
@@ -1140,6 +1204,25 @@ ul { list-style: none; }
   }
   .global-nav a::after { display: none; }
   .nav-cta { margin-top: 18px; }
+
+  /* モバイルではドロップダウンを展開表示 */
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    min-width: 0;
+  }
+  .global-nav .dropdown-menu a {
+    font-size: 0.95rem;
+    padding: 10px 40px;
+    opacity: 0.85;
+  }
+
+  .principle-grid { grid-template-columns: 1fr; }
 
   .news-strip-inner { grid-template-columns: 1fr; gap: 20px; }
   .news-list li { grid-template-columns: 92px 1fr; grid-template-rows: auto auto; gap: 4px 14px; padding: 14px 0; }
