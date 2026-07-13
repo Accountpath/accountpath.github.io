@@ -105,7 +105,7 @@ ul { list-style: none; }
   transition: color 0.35s;
 }
 
-.global-nav ul { display: flex; align-items: center; gap: 34px; }
+.global-nav > ul { display: flex; align-items: center; gap: 34px; }
 .global-nav li { position: relative; }
 
 /* ドロップダウン(About us 配下) */
@@ -129,6 +129,7 @@ ul { list-style: none; }
   visibility: visible;
   transform: translate(-50%, 0);
 }
+.global-nav .dropdown-menu { display: block; }
 .global-nav .dropdown-menu li { width: 100%; }
 .global-nav .dropdown-menu a {
   display: flex;
