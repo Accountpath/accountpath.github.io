@@ -82,7 +82,14 @@ ul { list-style: none; }
   justify-content: space-between;
 }
 
-.brand { display: flex; flex-direction: column; line-height: 1.3; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.3; }
+
+/* 会社ロゴ(白ヘッダー用カラー版 / 暗背景用ホワイト版を切り替え) */
+.brand-mark { width: 42px; height: 42px; display: block; }
+.brand-mark-dark { display: none; }
+.site-header.scrolled .brand-mark-light { display: none; }
+.site-header.scrolled .brand-mark-dark { display: block; }
 
 .brand-logo {
   font-family: var(--font-en);
@@ -872,21 +879,39 @@ ul { list-style: none; }
   box-shadow: 0 14px 36px rgba(27, 29, 32, 0.16);
 }
 
-.member-avatar {
-  width: 112px;
-  height: 112px;
-  border-radius: 50%;
-  background: var(--navy);
-  color: var(--accent);
+.member-photo {
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 26px;
+}
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 写真準備中プレースホルダー */
+.member-photo.placeholder {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 8px;
+  background: var(--bg-soft);
+  border: 1px dashed #b9bcbf;
+}
+.member-photo.placeholder .ph-en {
   font-family: var(--font-en);
-  font-size: 1.5rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  margin: 0 auto 24px;
-  border: 3px solid var(--accent);
+  letter-spacing: 0.24em;
+  color: var(--accent-text);
+  text-transform: uppercase;
+}
+.member-photo.placeholder .ph-jp {
+  font-size: 0.78rem;
+  color: var(--text-muted);
 }
 
 .member-name {
