@@ -1079,6 +1079,10 @@ ul { list-style: none; }
   padding: 48px 28px 44px;
   text-align: center;
   transition: transform 0.35s, box-shadow 0.35s;
+  /* 3枚のカードで行トラックを共有し、Careerの開始位置を揃える */
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
 }
 .member-card:hover {
   transform: translateY(-6px);
