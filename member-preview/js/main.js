@@ -81,20 +81,39 @@ document.addEventListener("DOMContentLoaded", () => {
     counters.forEach((el) => countIo.observe(el));
   }
 
-  // --- お問い合わせフォーム(デモ: 送信先未設定のためメッセージ表示のみ) ---
+  // --- お問い合わせフォーム(Formspree経由で送信) ---
   const form = document.querySelector(".contact-form form");
   const status = document.querySelector(".form-status");
   if (form && status) {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
-      status.textContent =
-        "お問い合わせありがとうございます。内容を確認のうえ、担当者よりご連絡いたします。";
+      const btn = form.querySelector('button[type="submit"]');
+      const originalLabel = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "送信中…";
+      status.classList.remove("show", "error");
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+        if (!res.ok) throw new Error("submit failed: " + res.status);
+        status.textContent =
+          "お問い合わせありがとうございます。内容を確認のうえ、担当者よりご連絡いたします。";
+        form.reset();
+      } catch (err) {
+        status.textContent =
+          "送信に失敗しました。お手数ですが、時間をおいて再度お試しください。";
+        status.classList.add("error");
+      }
       status.classList.add("show");
-      form.reset();
+      btn.disabled = false;
+      btn.textContent = originalLabel;
     });
   }
 });

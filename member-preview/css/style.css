@@ -1030,6 +1030,10 @@ ul {
   display: block;
 }
 
+.form-status.error {
+  color: #b3261e;
+}
+
 .cta-band {
   padding: 92px 0;
   background:
