@@ -1278,6 +1278,7 @@ ul { list-style: none; }
 .form-submit .btn { width: min(340px, 100%); }
 .form-status { margin-top: 16px; font-size: 0.9rem; color: var(--navy); text-align: center; display: none; }
 .form-status.show { display: block; }
+.form-status.error { color: #b3261e; }
 
 /* =========================================================
    フッター
