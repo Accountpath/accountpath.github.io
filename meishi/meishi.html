@@ -87,14 +87,7 @@
     color: var(--muted);
     margin-top: 0.6mm;
   }
-  .front .email {
-    font-family: var(--font-en);
-    font-weight: 400;
-    font-size: 2.1mm;
-    letter-spacing: .05em;
-    color: var(--muted);
-    margin-top: 2.2mm;
-  }
+  .front .name-title.qualification { margin-top: 1mm; }
 
   .front .company-block {
     position: absolute;
@@ -180,10 +173,10 @@
   <p class="preview-label">表面（仕上がり 91×55mm / 塗り足し込み 97×61mm）</p>
   <div class="card front">
     <div class="name-block">
-      <div class="name-en">Akira Nakae</div>
-      <div class="name-jp">中江 明</div>
-      <div class="name-title">代表取締役</div>
-      <div class="email">taki@jcpa-accounting.com</div>
+      <div class="name-en">Ryosuke Taki</div>
+      <div class="name-jp">瀧 遼介</div>
+      <div class="name-title">取締役</div>
+      <div class="name-title qualification">公認会計士・税理士</div>
     </div>
 
     <div class="logo-badge">
@@ -201,9 +194,10 @@
 
     <div class="company-block">
       <div class="company-name">株式会社AccountPath</div>
-      <div class="sub">〒000-0000 東京都○○区○○ 1-2-3 ○○ビル 5F</div>
-      <div class="sub">phone. 00-0000-0000</div>
-      <div class="sub">https://www.accountpath.co.jp</div>
+      <div class="sub">〒150-0043 東京都渋谷区道玄坂1-10-8-2F-C</div>
+      <div class="sub">TEL：070-9120-1630</div>
+      <div class="sub">E-Mail：taki@accountpath.co.jp</div>
+      <div class="sub">https://accountpath.co.jp</div>
     </div>
 
     <div class="ap-mark">
@@ -221,7 +215,7 @@
   <div class="card back">
     <div class="inner">
       <div class="qr"></div>
-      <div class="qr-url">https://www.accountpath.co.jp</div>
+      <div class="qr-url">https://accountpath.co.jp</div>
       <div class="wordmark">AccountPath</div>
       <div class="wordmark-sub">ACCOUNTING ADVISORY</div>
     </div>
@@ -229,8 +223,8 @@
 
   <script src="qrcode.min.js"></script>
   <script>
-    /* QRコードのリンク先URL（要確認：正式なドメインに差し替えてください） */
-    var QR_URL = 'https://www.accountpath.co.jp';
+    /* QRコードのリンク先URL */
+    var QR_URL = 'https://accountpath.co.jp';
     var qr = qrcode(0, 'M');
     qr.addData(QR_URL);
     qr.make();
